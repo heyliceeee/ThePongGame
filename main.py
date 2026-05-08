@@ -38,8 +38,11 @@ def game():
         ball.move() # move the ball
 
         if ball.ycor() > 280 or ball.ycor() < -280: # detect collision with wall
-            ball.bounce() # needs bounce
-        # detect collision with paddle
+            ball.bounce_y() # needs bounce
+
+        if ball.distance(left_paddle) < 50 or ball.xcor() > 320 or ball.distance(right_paddle) < 50 or ball.xcor() < -320: # detect collision with paddle
+            ball.bounce_x() # needs bounce
+
         # detect when paddle misses
 
 create_screen() # create the screen
@@ -52,6 +55,5 @@ screen.exitonclick()
 # - paddle (player 1 & player 2)
 
 # tasks:
-# 6. detect collision with paddle
 # 7. detect when paddle misses
 # 8. keep score

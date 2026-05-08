@@ -40,8 +40,13 @@ class Ball(Turtle):
         new_x = self.xcor() + self.x_move
         new_y = self.ycor() + self.y_move
         self.goto(new_x, new_y)
-    def bounce(self):
+    def bounce_y(self):
         """
-        bounce the ball
+        bounce in y the ball
         """
         self.y_move *= -1
+    def bounce_x(self):
+        """
+        bounce in xx the ball
+        """
+        self.x_move *= -1
