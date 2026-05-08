@@ -37,7 +37,8 @@ def game():
 
         ball.move() # move the ball
 
-        # detect collision with wall and bounce
+        if ball.ycor() > 280 or ball.ycor() < -280: # detect collision with wall
+            ball.bounce() # needs bounce
         # detect collision with paddle
         # detect when paddle misses
 
@@ -51,7 +52,6 @@ screen.exitonclick()
 # - paddle (player 1 & player 2)
 
 # tasks:
-# 5. detect collision with wall and bounce
 # 6. detect collision with paddle
 # 7. detect when paddle misses
 # 8. keep score

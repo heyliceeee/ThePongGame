@@ -21,6 +21,8 @@ class Ball(Turtle):
     def __init__(self):
         super().__init__()
         self.create()
+        self.x_move = 10
+        self.y_move = 10
 
     def create(self):
         """
@@ -31,11 +33,15 @@ class Ball(Turtle):
         self.shapesize(stretch_wid=1, stretch_len=1)  # set size
         self.penup()  # no draw while moving
         self.goto(0, 0)  # set position
-
     def move(self):
         """
         move the ball
         """
-        new_x = self.xcor() + 1
-        new_y = self.ycor() + 1
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
         self.goto(new_x, new_y)
+    def bounce(self):
+        """
+        bounce the ball
+        """
+        self.y_move *= -1
