@@ -1,5 +1,7 @@
 import time
 from turtle import Screen
+
+from Ball import Ball
 from Paddle import Paddle
 BORDERS = [280, -280]
 
@@ -19,7 +21,7 @@ def game():
     """
     left_paddle = Paddle(-350) # create the left paddle
     right_paddle = Paddle(350) # create the right paddle
-    # create the ball
+    ball = Ball() # create the ball
     # create the scoreboard
 
     screen.listen()
@@ -33,7 +35,7 @@ def game():
         screen.update() # show the initial paddles
         time.sleep(0.1)  # a brief pause to show the movement
 
-        # move the paddles
+        ball.move() # move the ball
 
         # detect collision with wall and bounce
         # detect collision with paddle
@@ -49,7 +51,6 @@ screen.exitonclick()
 # - paddle (player 1 & player 2)
 
 # tasks:
-# 4. create the ball and make it move
 # 5. detect collision with wall and bounce
 # 6. detect collision with paddle
 # 7. detect when paddle misses
