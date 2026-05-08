@@ -17,15 +17,16 @@ def game():
     """
     move the paddle and the ball until the game ends
     """
-    paddles = Paddle() # create the paddles
+    left_paddle = Paddle(-350) # create the left paddle
+    right_paddle = Paddle(350) # create the right paddle
     # create the ball
     # create the scoreboard
 
     screen.listen()
-    screen.onkey(paddles.move_up_paddle_left, "w")  # when click in up w, paddle right move up
-    screen.onkey(paddles.move_down_paddle_left, "s")  # when click in s key, paddle right move down
-    screen.onkey(paddles.move_up_paddle_right, "Up")  # when click in up key, paddle right move up
-    screen.onkey(paddles.move_down_paddle_right, "Down")  # when click in down key, paddle right move down
+    screen.onkey(left_paddle.move_up, "w")  # when click in up w, paddle right move up
+    screen.onkey(left_paddle.move_down, "s")  # when click in s key, paddle right move down
+    screen.onkey(right_paddle.move_up, "Up")  # when click in up key, paddle right move up
+    screen.onkey(right_paddle.move_down, "Down")  # when click in down key, paddle right move down
 
     is_game_on = True
     while is_game_on: # while game happens
