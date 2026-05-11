@@ -55,6 +55,11 @@ def game():
             ball.reset_position() # center of the screen
             scoreboard.left_point() # left paddle wins
 
+        # check if the game is over
+        if scoreboard.left_score == 3 or scoreboard.right_score == 3:
+            scoreboard.game_over()
+            is_game_on = False
+
 
 create_screen() # create the screen
 game() # move the paddle and the ball until the game ends
