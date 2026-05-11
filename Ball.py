@@ -47,6 +47,12 @@ class Ball(Turtle):
         self.y_move *= -1
     def bounce_x(self):
         """
-        bounce in xx the ball
+        bounce in x the ball
         """
         self.x_move *= -1
+    def reset_position(self):
+        """
+        go center of the screen and bounce in x the ball
+        """
+        self.goto(0, 0)
+        self.bounce_x()

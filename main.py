@@ -25,25 +25,33 @@ def game():
     # create the scoreboard
 
     screen.listen()
-    screen.onkey(left_paddle.move_up, "w")  # when click in up w, paddle right move up
-    screen.onkey(left_paddle.move_down, "s")  # when click in s key, paddle right move down
-    screen.onkey(right_paddle.move_up, "Up")  # when click in up key, paddle right move up
-    screen.onkey(right_paddle.move_down, "Down")  # when click in down key, paddle right move down
+    screen.onkey(left_paddle.move_up, "w")  # when click on up w, paddle right move up
+    screen.onkey(left_paddle.move_down, "s")  # when click on s a key, paddle right move down
+    screen.onkey(right_paddle.move_up, "Up")  # when click in an up key, paddle right move up
+    screen.onkey(right_paddle.move_down, "Down")  # when click in a down key, paddle right move down
 
     is_game_on = True
-    while is_game_on: # while game happens
+    while is_game_on: # while the game happens
         screen.update() # show the initial paddles
         time.sleep(0.1)  # a brief pause to show the movement
 
         ball.move() # move the ball
 
-        if ball.ycor() > 280 or ball.ycor() < -280: # detect collision with wall
+        if ball.ycor() > 280 or ball.ycor() < -280: # detect collision with up/down wall
             ball.bounce_y() # needs bounce
 
-        if ball.distance(left_paddle) < 50 or ball.xcor() > 320 or ball.distance(right_paddle) < 50 or ball.xcor() < -320: # detect collision with paddle
+        if ball.xcor() < -320 and ball.distance(left_paddle) < 50: # detect collision with left paddle
             ball.bounce_x() # needs bounce
 
-        # detect when paddle misses
+        if ball.xcor() > 320 and ball.distance(right_paddle) < 50: # detect collision with right paddle
+            ball.bounce_x() # needs bounce
+
+        if ball.xcor() < -380: # detect when the left paddle misses the ball
+            ball.reset_position() # center of the screen
+
+        if ball.xcor() > 380: # detect when the right paddle misses the ball
+            ball.reset_position() # center of the screen
+
 
 create_screen() # create the screen
 game() # move the paddle and the ball until the game ends
@@ -55,5 +63,4 @@ screen.exitonclick()
 # - paddle (player 1 & player 2)
 
 # tasks:
-# 7. detect when paddle misses
 # 8. keep score
