@@ -1,8 +1,9 @@
 import time
 from turtle import Screen
-
 from Ball import Ball
 from Paddle import Paddle
+from Scoreboard import Scoreboard
+
 BORDERS = [280, -280]
 
 screen = Screen()
@@ -22,7 +23,7 @@ def game():
     left_paddle = Paddle(-350) # create the left paddle
     right_paddle = Paddle(350) # create the right paddle
     ball = Ball() # create the ball
-    # create the scoreboard
+    scoreboard = Scoreboard() # create the scoreboard
 
     screen.listen()
     screen.onkey(left_paddle.move_up, "w")  # when click on up w, paddle right move up
@@ -33,7 +34,7 @@ def game():
     is_game_on = True
     while is_game_on: # while the game happens
         screen.update() # show the initial paddles
-        time.sleep(0.1)  # a brief pause to show the movement
+        time.sleep(ball.move_speed)  # a brief pause to show the movement
 
         ball.move() # move the ball
 
@@ -48,19 +49,13 @@ def game():
 
         if ball.xcor() < -380: # detect when the left paddle misses the ball
             ball.reset_position() # center of the screen
+            scoreboard.right_point()  # right paddle wins
 
         if ball.xcor() > 380: # detect when the right paddle misses the ball
             ball.reset_position() # center of the screen
+            scoreboard.left_point() # left paddle wins
 
 
 create_screen() # create the screen
 game() # move the paddle and the ball until the game ends
 screen.exitonclick()
-
-# class:
-# - scoreboard (player 1 & player 2)
-# - ball
-# - paddle (player 1 & player 2)
-
-# tasks:
-# 8. keep score

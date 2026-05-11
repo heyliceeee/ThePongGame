@@ -23,6 +23,7 @@ class Ball(Turtle):
         self.create()
         self.x_move = 10
         self.y_move = 10
+        self.move_speed = 0.1
 
     def create(self):
         """
@@ -50,9 +51,11 @@ class Ball(Turtle):
         bounce in x the ball
         """
         self.x_move *= -1
+        self.move_speed *= 0.9 # increase move speed
     def reset_position(self):
         """
         go center of the screen and bounce in x the ball
         """
         self.goto(0, 0)
+        self.move_speed = 0.1 # set normal move speed
         self.bounce_x()
