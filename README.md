@@ -1,45 +1,45 @@
 # 🏓 Pong Game  
-Uma recriação do clássico Pong em Python usando o módulo **turtle**, com classes separadas para organização: **Ball**, **Paddle** e **Scoreboard**.  
-O objetivo é simples: impedir que a bola passe pelo teu paddle e marcar pontos até atingir a vitória.
+A recreation of the classic Pong in Python using the **turtle** module, with separate classes for organization: **Ball**, **Paddle**, and **Scoreboard**.  
+The goal is simple: prevent the ball from passing your paddle and score points until you win.
 
 ---
 
-## 🎯 Objetivo  
-Criar uma versão modular e orientada a objetos do jogo Pong, com animações suaves, deteção de colisões, sistema de pontuação e condição de vitória para o primeiro jogador a atingir **3 pontos**.
+## 🎯 Purpose  
+Create a modular, object‑oriented version of the Pong game, featuring smooth animations, collision detection, a scoring system, and a win condition for the first player to reach **3 points**.
 
 ---
 
-## 🧩 Estrutura do Projeto  
-- **Ball** – controla o movimento da bola, rebotes e velocidade  
-- **Paddle** – representa as raquetes e o seu movimento vertical  
-- **Scoreboard** – mostra e atualiza a pontuação, incluindo o ecrã de fim de jogo  
-- **main.py** – contém o loop principal do jogo, deteção de colisões e lógica de vitória
+## 🧩 Project Structure  
+- **Ball** — controls ball movement, bouncing, and speed  
+- **Paddle** — represents the paddles and their vertical movement  
+- **Scoreboard** — displays and updates the score, including the game‑over screen  
+- **main.py** — contains the main game loop, collision detection, and win logic  
 
 ---
 
-## 🚀 Funcionalidades  
-- Movimento fluido da bola com atualização manual do ecrã (`screen.tracer(0)`)  
-- Rebotes nas paredes e nos paddles  
-- Aceleração progressiva da bola após cada colisão  
-- Sistema de pontuação para ambos os jogadores  
-- Fim de jogo quando um jogador atinge 3 pontos  
-- Mensagem de **GAME OVER** exibida no centro do ecrã  
+## 🚀 Features  
+- Smooth ball movement using manual screen updates (`screen.tracer(0)`)  
+- Wall and paddle collision detection  
+- Progressive ball speed increase after each hit  
+- Scoring system for both players  
+- Game ends when a player reaches 3 points  
+- **GAME OVER** message displayed at the center of the screen  
 
 ---
 
-## 🎮 Controlo do Jogo  
-- **W** → mover paddle esquerdo para cima (raquete esquerda)
-- **S** → mover paddle esquerdo para baixo (raquete esquerda)
-- **Seta ↑** → mover paddle direito para cima (raquete direita)
-- **Seta ↓** → mover paddle direito para baixo (raquete direita)
+## 🎮 Controls  
+- **W** → move left paddle up  
+- **S** → move left paddle down  
+- **Up Arrow** → move right paddle up  
+- **Down Arrow** → move right paddle down  
 
 ---
 
-## 🧠 Conceitos Praticados  
-- Programação orientada a objetos (OOP)  
-- Herança de classes (`Ball`, `Paddle` e `Scoreboard` herdam de `Turtle`)  
-- Animação com `screen.tracer()`  
-- Deteção de colisões  
-- Gestão de velocidade e direção  
-- Loops de jogo  
-- Modularização de código  
+## 🧠 Concepts Practiced  
+- Object‑Oriented Programming (OOP)  
+- Class inheritance (`Ball`, `Paddle`, and `Scoreboard` inherit from `Turtle`)  
+- Animation with `screen.tracer()`  
+- Collision detection  
+- Speed and direction management  
+- Game loops  
+- Code modularization  
